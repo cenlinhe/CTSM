@@ -46,7 +46,7 @@ module SnowSnicarMod
   ! !PUBLIC DATA MEMBERS:
   integer,  public, parameter :: sno_nbr_aer =   8        ! number of aerosol species in snowpack
                                                           ! (indices described above) [nbr]
-  logical,  public, parameter :: DO_SNO_OC =    .false.   ! parameter to include organic carbon (OC)
+  logical,  public, parameter :: DO_SNO_OC =    .true.   ! parameter to include organic carbon (OC)
                                                           ! in snowpack radiative calculations
   logical,  public, parameter :: DO_SNO_AER =   .true.    ! parameter to include aerosols in snowpack radiative calculations
 
@@ -1389,9 +1389,9 @@ contains
      call ncd_io( 'ext_cff_mss_ice_dfs', ext_cff_mss_snw_dfs, 'read', ncid, posNOTonfile=.true.)
 
      ! BC species 1 Mie parameters
-     call ncd_io( 'ss_alb_bcphil', ss_alb_bc1,           'read', ncid, posNOTonfile=.true.)
-     call ncd_io( 'asm_prm_bcphil', asm_prm_bc1,         'read', ncid, posNOTonfile=.true.)
-     call ncd_io( 'ext_cff_mss_bcphil', ext_cff_mss_bc1, 'read', ncid, posNOTonfile=.true.)
+     call ncd_io( 'ss_alb_bcphob', ss_alb_bc1,           'read', ncid, posNOTonfile=.true.)
+     call ncd_io( 'asm_prm_bcphob', asm_prm_bc1,         'read', ncid, posNOTonfile=.true.)
+     call ncd_io( 'ext_cff_mss_bcphob', ext_cff_mss_bc1, 'read', ncid, posNOTonfile=.true.)
 
      ! BC species 2 Mie parameters
      call ncd_io( 'ss_alb_bcphob', ss_alb_bc2,           'read', ncid, posNOTonfile=.true.)
@@ -1399,9 +1399,9 @@ contains
      call ncd_io( 'ext_cff_mss_bcphob', ext_cff_mss_bc2, 'read', ncid, posNOTonfile=.true.)
 
      ! OC species 1 Mie parameters
-     call ncd_io( 'ss_alb_ocphil', ss_alb_oc1,           'read', ncid, posNOTonfile=.true.)
-     call ncd_io( 'asm_prm_ocphil', asm_prm_oc1,         'read', ncid, posNOTonfile=.true.)
-     call ncd_io( 'ext_cff_mss_ocphil', ext_cff_mss_oc1, 'read', ncid, posNOTonfile=.true.)
+     call ncd_io( 'ss_alb_ocphob', ss_alb_oc1,           'read', ncid, posNOTonfile=.true.)
+     call ncd_io( 'asm_prm_ocphob', asm_prm_oc1,         'read', ncid, posNOTonfile=.true.)
+     call ncd_io( 'ext_cff_mss_ocphob', ext_cff_mss_oc1, 'read', ncid, posNOTonfile=.true.)
 
      ! OC species 2 Mie parameters
      call ncd_io( 'ss_alb_ocphob', ss_alb_oc2,           'read', ncid, posNOTonfile=.true.)
